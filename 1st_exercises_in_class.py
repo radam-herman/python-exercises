@@ -105,8 +105,10 @@ that is, variables and operators,
  to describe the following scenarios. 
  Do not worry about the real operations to get the values, 
  the goal of these exercises is to understand how real world conditions 
- can be represented with code.
+ can be represented with code."""
 
+
+# exercise 1
 -- You have rented some movies for your kids: 
 The little mermaid (for 3 days), Brother Bear (for 5 days, they love it),
  and Hercules (1 day, you don't know yet if they're going to like it). 
@@ -132,9 +134,7 @@ rental_cost = 3
 total_rental_cost = rental_cost * total_days_rented
 print(total_rental_cost)
 
-
-
-
+# exercise 2
 Suppose you're working as a contractor for 3 companies: 
 Google, Amazon and Facebook, they pay you a different rate per hour. 
 Google pays 400 dollars per hour, Amazon 380, and Facebook 350. 
@@ -153,9 +153,24 @@ facebook_pay = facebook_hrs * 350
 total_pay = amazon_pay + google_pay + facebook_pay
 print(total_pay)
 
+# exercise 3
+### A student can be enrolled to a class 
+only if the class is not full and 
+the class schedule does not conflict with her current schedule.
+
+if class_capacity = max_size_of_class or overlapping (class_sched, current_sched):
+    enrollment = False
+else enrollment = True
+
+class_has_space = False
+scedule_works = True
+student_can_be_enrolled = class_has_space and schedule_works
+
+
+# exercise 4
 A product offer can be applied only 
 if people buys more than 2 items, and the offer has not expired. 
-Premium members do not need to buy a specific amount of products."""
+Premium members do not need to buy a specific amount of products.
 
 if member = 'Premium':
     product_offer = True
@@ -165,16 +180,8 @@ else:
     product_offer = False
 
 
-""" ### A student can be enrolled to a class 
-only if the class is not full and 
-the class schedule does not conflict with her current schedule."""
-
-if class_capacity = max_size_of_class or overlapping (class_sched, current_sched):
-    enrollment = False
-else enrollment = True
-
-
-"""Use the following code to follow the instructions below:
+ # exercise 5
+Use the following code to follow the instructions below:
 
 username = 'codeup'
 password = 'notastrongpassword'
@@ -183,7 +190,7 @@ Create a variable that holds a boolean value for each of the following condition
 the password must be at least 5 characters
 the username must be no more than 20 characters
 the password must not be the same as the username
-bonus neither the username or password can start or end with whitespace"""
+bonus neither the username or password can start or end with whitespace
 
 username = 'codeup'
 password = 'notastrongpassword'
@@ -200,6 +207,12 @@ password_duplication_check(password):
         check = False
     else:
         check = True
+# alternate 5
+pswd_at_5 = len(password) >= 5
+len(username) <= 20
+
+whitespace_pswd = pswd[0] == " " or pswd[-1] == ' '
+whitespace_username = username[0] == " " or username[-1] == ' '
 
 # bonus TRIM function/check
   
