@@ -100,4 +100,106 @@ True or "42"
 {} + {}
     TypeError: unsupported operand type(s) for +: 'dict' and 'dict'
 
+"""Write some Python code, 
+that is, variables and operators,
+ to describe the following scenarios. 
+ Do not worry about the real operations to get the values, 
+ the goal of these exercises is to understand how real world conditions 
+ can be represented with code.
 
+-- You have rented some movies for your kids: 
+The little mermaid (for 3 days), Brother Bear (for 5 days, they love it),
+ and Hercules (1 day, you don't know yet if they're going to like it). 
+ If price for a movie per day is 3 dollars, how much will you have to pay?
+
+# use a list of days, each index value is a movie's days rented
+# yield total_days_rented
+# will loop thru, sum the list and multiply by rental_rate
+# for total_rental_cost
+
+# each movies days_rented
+days_rented = [3, 5, 1 ]
+total_days_rented = 0
+# make loop
+for adding_days_rented in days_rented:
+    total_days_rented += adding_days_rented
+print(total_days_rented)
+
+# rental_cost = 3 per day
+rental_cost = 3
+
+#getting total_rental_cost
+total_rental_cost = rental_cost * total_days_rented
+print(total_rental_cost)
+
+
+
+
+Suppose you're working as a contractor for 3 companies: 
+Google, Amazon and Facebook, they pay you a different rate per hour. 
+Google pays 400 dollars per hour, Amazon 380, and Facebook 350. 
+How much will you receive in payment for this week? 
+You worked 10 hours for Facebook, 6 hours for Google and 4 hours for Amazon.
+
+# list hours per contract
+amazon_hrs = 4
+google_hrs = 6
+facebook_hrs = 10
+# list pay per contract
+amazon_pay = amazon_hrs * 380
+google_pay = google_hrs * 480
+facebook_pay = facebook_hrs * 350
+# calculate total pay
+total_pay = amazon_pay + google_pay + facebook_pay
+print(total_pay)
+
+A product offer can be applied only 
+if people buys more than 2 items, and the offer has not expired. 
+Premium members do not need to buy a specific amount of products."""
+
+if member = 'Premium':
+    product_offer = True
+if purchased_items >= 2 and prodcut_offer_expiration = False:
+    product_offer = True
+else:
+    product_offer = False
+
+
+""" ### A student can be enrolled to a class 
+only if the class is not full and 
+the class schedule does not conflict with her current schedule."""
+
+if class_capacity = max_size_of_class or overlapping (class_sched, current_sched):
+    enrollment = False
+else enrollment = True
+
+
+"""Use the following code to follow the instructions below:
+
+username = 'codeup'
+password = 'notastrongpassword'
+Create a variable that holds a boolean value for each of the following conditions:
+
+the password must be at least 5 characters
+the username must be no more than 20 characters
+the password must not be the same as the username
+bonus neither the username or password can start or end with whitespace"""
+
+username = 'codeup'
+password = 'notastrongpassword'
+
+# setting variables for constraints
+password_min_length = 5
+password_max_length = 20
+if password < password_min_length or password > password_max_length:
+    check = False
+else:
+    check = True
+password_duplication_check(password):
+    if username = password:
+        check = False
+    else:
+        check = True
+
+# bonus TRIM function/check
+  
