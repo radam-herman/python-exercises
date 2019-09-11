@@ -52,12 +52,32 @@ fruits_with_more_than_two_vowels = fruit for fruit in fruits if
 print(fruits_with_more_than_two_vowels)
 
 # Exercise 4 - make a variable named fruits_with_only_two_vowels. The result should be ['mango', 'kiwi', 'strawberry']
+vowels = "AaEeIiOoUu"
+fruits = ['mango', 'kiwi', 'strawberry', 'guava', 'pineapple', 'mandarin orange']
+fruits_over_2_vowels = []
+count = 0
+for fruit in fruits:
+    if char in fruit in vowels:
+        count += 1
+    if ct > 2:
+        fruits_over_2_vowels.append(fruit)
+print(fruits_over_2_vowels)
+
 
 # Exercise 5 - make a list that contains each fruit with more than 5 characters
+fruits = ['mango', 'kiwi', 'strawberry', 'guava', 'pineapple', 'mandarin orange']
+fruit_over_five = [fruit for fruit in fruits if len(fruit) > 5]
+print(fruit_over_five)
 
 # Exercise 6 - make a list that contains each fruit with exactly 5 characters
+fruits = ['mango', 'kiwi', 'strawberry', 'guava', 'pineapple', 'mandarin orange']
+fruit_exact_five = [fruit for fruit in fruits if len(fruit) == 5]
+print(fruit_exact_five)
 
 # Exercise 7 - Make a list that contains fruits that have less than 5 characters
+fruits = ['mango', 'kiwi', 'strawberry', 'guava', 'pineapple', 'mandarin orange']
+fruit_lessthan_five = [fruit for fruit in fruits if len(fruit) < 5]
+print(fruit_lessthan_five)
 
 # Exercise 8 - Make a list containing the number of characters in each fruit. Output would be [5, 4, 10, etc... ]
 
