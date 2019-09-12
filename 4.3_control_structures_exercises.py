@@ -86,5 +86,49 @@ for n in range(1, 11):
     product = int(number_to_multiply) * n
     print(number_to_multiply, " X ", n, " = ", product )
 
+# Create a for loop that uses print to create the output shown below.
+
+for n in range(1, 10):
+    # print('this is n: ', n)
+    product = str(n) * n
+    print(product)
+
+#  
+enter_digit = input("Enter an odd number between n and m")
+
+if enter_digit.isdigit == True:
+    print('Your input is good')
+else:
+    print('not a digit - try again')
+
+while True:
+    enter_digit = input("Enter an odd number between 1 and 50")
+    if enter_digit.isdigit() == True:
+        if enter_digit > 0 and enter_digit <= 50:
+           print("good number")
+        break
+    else:
+        print("That's not a proper digit - please try again")
+            
+
+# --  Fizzbuzz  ----
+
+One of the most common interview questions for entry-level programmers is the FizzBuzz test. Developed by Imran Ghory, the test is designed to test basic looping and conditional logic skills.
+
+Write a program that prints the numbers from 1 to 100.
+For multiples of three print "Fizz" instead of the number
+For the multiples of five print "Buzz".
+For numbers which are multiples of both three and five print "FizzBuzz".
+
+for n in range(1, 100):
+    if n % 3 == 0 and n % 5 == 0:
+        print("FizzBuzz")
+    elif n % 3 == 0:
+        print("Fizz")
+    elif n % 5 == 0:
+        print("Buzz")
+    else:
+        print(n)
+
 
 
