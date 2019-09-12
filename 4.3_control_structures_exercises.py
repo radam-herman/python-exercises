@@ -67,6 +67,11 @@ while i >= -10:
 # -- Create a while loop that starts at 2, and displays the number squared on each line 
 #       while the number is less than 1,000,000. Output should equal:
 
+i = 2
+while i < 1000000:
+    print(i)
+    i=i**2
+
 # Write a loop that uses print to create the output shown below.
 # 100
 #95
@@ -74,6 +79,10 @@ while i >= -10:
 #85
 #80
 
+i = 100
+while i >= 5:
+    print(i)
+    i = i - 5
 ### --- For Loops -----  #####
 
 # Write some code that prompts the user for a number, then shows a multiplication table up through 10 for that number.
@@ -93,6 +102,9 @@ for n in range(1, 10):
     product = str(n) * n
     print(product)
 
+   # print(str(num)*num)
+
+
 #  
 enter_digit = input("Enter an odd number between n and m")
 
@@ -103,7 +115,7 @@ else:
 
 while True:
     enter_digit = input("Enter an odd number between 1 and 50")
-    if enter_digit.isdigit() == True:
+    if int(enter_digit).isdigit() == True:
         if enter_digit > 0 and enter_digit <= 50:
            print("good number")
         break
@@ -120,7 +132,7 @@ For multiples of three print "Fizz" instead of the number
 For the multiples of five print "Buzz".
 For numbers which are multiples of both three and five print "FizzBuzz".
 
-for n in range(1, 100):
+for n in range(1, 101):
     if n % 3 == 0 and n % 5 == 0:
         print("FizzBuzz")
     elif n % 3 == 0:
