@@ -141,7 +141,7 @@ nbr_to_letter(40)
 
  # dictionary solution
 
- 
+
 
 # 9 Define a function named remove_vowels that accepts a string and returns a string with all the vowels removed.
 
@@ -197,6 +197,23 @@ chk.replace(" ", "_")
 
         ## RESEARCH ESCAPE CHARACTERS to resolve - '\]'
 
+   #### some better solutions
+   # solution: 
+    # is identifier
+def rem_spc_char(s):
+    return ''.join([c for c in s if c.isalpha() or c == ' '
+
+def normalize_name(s):
+    return rem_spc_char(s).lower().strip().replace(' ', "_")
+
+def cumsum(xs):
+    sums = [xs[0]]
+    for x in xs[1:]:
+        sums.append(sums[-1] + x)
+    return sums
+
+def lookup_letter(c):
+    return 'abcdefghijklmnopqrstuvwxyz'.index(c) + 1
 
 # 11 - Write a function named cumsum that accepts a list of numbers and returns a list that is the cumulative sum 
 # of the numbers in the list.
