@@ -61,27 +61,65 @@ capitalize_first("car")
 # 5 -- Define a function named calculate_tip. It should accept a tip percentage 
 # (a number between 0 and 1) and the bill total, and return the amount to tip.
 
-def calculate_tip(tip_percent = .1, bill_total):
-    if tip_percent < 0 or tip_percent > 1:
+# can't get the default method to work 
+# def calculate_tip( bill_total, tip_percent = '.1'):
+
+calculate_tip(.5, 10)
+
+def calculate_tip( bill_total, tip_percent ):
+    if float(tip_percent) < 0 or float(tip_percent) > 1:
         print("Please try again between 0 and 1 - like .2")
+    else:
+        the_tip = (float(tip_percent) * float(bill_total))
+        print("here's the tip: ", the_tip)
 
 
+Define a function named apply_discount. It should accept a original price, and a discount percentage,
+ and return the price after the discount is applied.
+
+# 7 Define a function named handle_commas. It should accept a string that is a number that contains commas
+# in it as input, and return a number as output.
+
+def handle_commas(number):
+    actually_a_nmber = number.replace(',','')
+    print(actually_a_nmber)
 
 
-Define a function named apply_discount. It should accept a original price, and a discount percentage, and return the price after the discount is applied.
-Define a function named handle_commas. It should accept a string that is a number that contains commas in it as input, and return a number as output.
-Define a function named get_letter_grade. It should accept a number and return the letter grade associated with that number (A-F).
-Define a function named remove_vowels that accepts a string and returns a string with all the vowels removed.
-# 10 - Define a function named normalize_name. It should accept a string and return a valid python identifier, that is:
-# anything that is not a valid python identifier should be removed
-# leading and trailing whitespace should be removed
-# everything should be lowercase
-# spaces should be replaced with underscores
+handle_commas("1,000,000")
+
+
+# 8 Define a function named get_letter_grade. It should accept a number and return the letter grade associated 
+# with that number (A-F).
+
+def nbr_to_letter(nbr2):
+    if int(nbr2) > 90:
+        print(nbr2, " is the grade of - A")
+    elif int(nbr2) > 80:
+        print(nbr2, " is the grade of - B")
+    elif int(nbr2) > 70:
+        print(nbr2, " is the grade of - C")
+    elif int(nbr2) > 60:
+        print(nbr2, " is the grade of - D")
+    else:
+        print(nbr2, " is the grade of - F")
+
+nbr_to_letter(40)
+
+
+# 9 Define a function named remove_vowels that accepts a string and returns a string with all the vowels removed.
+# 10 - Define a function named normalize_name. It should accept a string and return 
+# a valid python identifier, that is:
+#       - anything that is not a valid python identifier should be removed
+#       - leading and trailing whitespace should be removed
+#       - everything should be lowercase
+#       - spaces should be replaced with underscores
 # for example:
 #   Name will become name
 #   First Name will become first_name
 #   % Completed will become completed
-# 11 - Write a function named cumsum that accepts a list of numbers and returns a list that is the cumulative sum of the numbers in the list.
+
+# 11 - Write a function named cumsum that accepts a list of numbers and returns a list that is the cumulative sum 
+# of the numbers in the list.
 #   cumsum([1, 1, 1]) returns [1, 2, 3]
 #   cumsum([1, 2, 3, 4]) returns [1, 3, 6, 10]
 
