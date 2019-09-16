@@ -15,6 +15,7 @@
 # that is, if you run the application, add some credits,
 # exit the application and run it again, you should still see 
 # the balance that you previously created. 
+
 # In order to do this, your application will need to store its data
 # in a text file. Consider creating a file where each line
 # in the file represents a single transaction.
@@ -28,7 +29,7 @@
         # remove
     # also look at clearing screen before reprint of menu.
 
-    
+
 
 def print_menu():       ## Your menu design here
     print(30 * "-" , "MENU" , 30 * "-")
