@@ -26,6 +26,10 @@ itertools.product(letters, numbers)
 for i in itertools.product(letters, numbers):
     print(i)
 
+
+
+
+
 import itertools as it
 it.combinations(('abcd', '123'))
 
@@ -58,12 +62,23 @@ for each in result:
 from json import load
 users = load(open('profiles.json', "r"))
 
+   # "r" is redundant
 
-parsed_json = (json.load(functions_exercises))
-print(json.dumps(parsed_json, indent=4, sort_keys=True))
 
-Total number of users
+
+# just some random json code fm searching
+# parsed_json = (json.load(functions_exercises))
+# print(json.dumps(parsed_json, indent=4, sort_keys=True))
+
+# Total number of users
+len(users)
+        ## ans - 19
+
 Number of active users
+
+
+
+
 Number of inactive users
 Grand total of balances for all users
 Average balance per user
