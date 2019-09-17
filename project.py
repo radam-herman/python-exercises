@@ -98,8 +98,21 @@ while loop:          ## While loop which will keep going until loop = False
 
 ### going over optimistic steps for reading balance function
 
+# open file
+    # read text - convert if necessary ie JSON imports as str?
+    # find last balance
+        # return to menu with balance info
 
 ### going over optimistic steps for withrawal function
-
+    # open file
+        # check the balance IF withdraw > balance then:
+                # YOU CAN ONLY WITHDRAW UPTO ... balance
+            # ELSE subtract amount from balance AND
+                # write a new balance
+        # return to menu with new_balance info
 
 ### going over optimistic steps for credit function
+    # open file
+        # add credit_amount to balance
+        # write a new balance
+        # return to menu with new_balance info
