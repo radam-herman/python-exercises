@@ -38,9 +38,10 @@ def withdrawal():
 def deposit():
     print("this is the deposit")
 
-def exit():
-    print("you chose to exit - are you sure?")
-    check_choice = input("Enter yes or no: ")
+  # DONT RUN THIS
+# def exit():
+    #print("you chose to exit - are you sure?")
+    #check_choice = input("Enter yes or no: ")
     #if check_choice.lower() == "yes":
     #   return loop = False
     #elif check_choice.lower() == "no":
@@ -49,9 +50,13 @@ def exit():
     # #   return raw_input("Wrong option selection. Enter any key to try again..")
 
 
-
 def print_menu():       ## Your menu design here
-    print(30 * "-" , "MENU" , 30 * "-")
+    #print(30 * "-" , "MENU" , 30 * "-")
+    print("\n")
+    print("~~~ Welcome to your terminal checkbook! ~~~")
+    print("\n")
+    print("What would you like to do?")
+    print("\n")
     print("1. view current balance")
     print("2. add a debit (withdrawal)")
     print("3. add a credit (deposit)")
@@ -62,26 +67,26 @@ loop=True
   
 while loop:          ## While loop which will keep going until loop = False
     print_menu()    ## Displays menu
-    choice = input("Enter your choice [1-5]: ")
+    choice = input("Enter your choice [1-4]: ")
      
-    if int(choice) == 1:     
+    if choice == '1':     
         print("Menu 1 - current balance has been selected")
         ## You can add your code or functions here
         check_balance()
-    elif int(choice) == 2:
+    elif choice == '2':
         print("Menu 2 - add a debit (withdrawal) has been selected")
         ## You can add your code or functions here
         withdrawal()
-    elif int(choice) == 3:
+    elif choice == '3':
         print("Menu 3 - add a credit (deposit) has been selected")
         ## You can add your code or functions here
         deposit()
-    elif int(choice) == 4:
+    elif choice == '4':
         print("Menu 4 has been selected")
         ## You can add your code or functions here
         loop=False # This will make the while loop to end as 
         # not value of loop is set to False
-        exit()
+        #exit()  # turned the fx exit() off
     else:
         # Any integer inputs other than values 1-5 we print an error message
         raw_input("Wrong option selection. Enter any key to try again..")
@@ -90,3 +95,11 @@ while loop:          ## While loop which will keep going until loop = False
 
 
 
+
+### going over optimistic steps for reading balance function
+
+
+### going over optimistic steps for withrawal function
+
+
+### going over optimistic steps for credit function
