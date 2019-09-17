@@ -128,7 +128,7 @@ current_balance = call JSON file
        # note - might have to add transaction_ID as integer and perform an order function
           # due to string ordering vs number ordering, ie  1, 2, 22, 3 vs 1, 2, 3, 22
         return running_balance
-
+                   chk load
   make withdrawal Fx
       get withrawal_amount_to_check
       call JSON file, call check_balance fx
