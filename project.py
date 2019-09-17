@@ -116,3 +116,42 @@ while loop:          ## While loop which will keep going until loop = False
         # add credit_amount to balance
         # write a new balance
         # return to menu with new_balance info
+
+######### ||||||||||||||||||||||||||||||||||||||  ###########
+#####   DICT and JSON file schema
+
+  #----- Fx Variables
+  # read file - get running_balance
+  check_balance Fx
+current_balance = call JSON file
+     find transactions[-1], get running_balance # find the last transaction
+       # note - might have to add transaction_ID as integer and perform an order function
+          # due to string ordering vs number ordering, ie  1, 2, 22, 3 vs 1, 2, 3, 22
+        return running_balance
+
+  make withdrawal Fx
+      get withrawal_amount_to_check
+      call JSON file, call check_balance fx
+       IF withrawal_amount_to_check > current_balance then:
+                YOU CAN ONLY WITHDRAW UPTO ... balance
+        ELSE subtract amount from current_balance AND
+                write a new balance to running_balance
+                save to JSON file
+        call check_balance fx , get current_balance
+        return to menu with current_balance info
+    
+make deposit Fx
+      call JSON file, get running_balance
+       deposit_to_write = add amount_to_credit to running_balance
+      save amount_to_credit and running_balance to JSON file
+
+
+
+  #---- dictionary 
+tranaction_ID # for keeping track of transactions
+running_balance # actually balance at open before read and writing JSON file
+time_stamp # use a time function to write a simple time stamp to each transaction
+  # optional
+  category # to list the category - make menu list?
+  description # default to "BLANK" if nothing noted
+
