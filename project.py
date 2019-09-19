@@ -29,10 +29,25 @@
         # remove
     # also look at clearing screen before reprint of menu.
 
+
+# these lists are for testing initial account processes and logic 
+# before testing from actual JSON document 
+account_list_transaction_id = [1, 2, 3]
+account_list_running_balance = [0, 100, 75]
+account_list_transaction_type = ["balance check", "credit", "debit"]
+account_list_time_stamp = ["2019-09-18 07:57:10.535372", "2019-09-18 08:09:47.689715", "2019-09-18 08:12:42.608941"]
+account_list_amount_delta = [0, 100, -25]
+
 def check_balance():
-    print("this is the balance checker place holder")
+    # this will open JSON file
+        # call the last transaction, ie -1 index transaction
+        # account_updater["main_account"]['transactions'][-1], then find running_balance
+        # proto setup will just call -1 index of account_list_running_balance
+    print("Your current balance is $", account_list_running_balance[-1])
+    # this will need to write back/append new transaction #, and "balance check", etc to file
 
 def withdrawal():
+    # 
     print("this is the withrawal place holder")
 
 def deposit():
@@ -82,7 +97,7 @@ while loop:          ## While loop which will keep going until loop = False
         ## You can add your code or functions here
         deposit()
     elif choice == '4':
-        print("Menu 4 has been selected")
+        print("Thanks, have a great day!")
         ## You can add your code or functions here
         loop=False # This will make the while loop to end as 
         # not value of loop is set to False
