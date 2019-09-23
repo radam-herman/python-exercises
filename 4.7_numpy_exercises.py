@@ -157,7 +157,7 @@ for number in a:
         evens_in_a.append(number)
 
 evens_in_a
-
+>>> [2, 4, 6, 8, 10]
 
 ## What about life in two dimensions? A list of lists is matrix, a table, a spreadsheet, a chessboard...
 ## Setup 2: Consider what it would take to find the 
@@ -210,11 +210,23 @@ for row in b:
     for number in row:
         product_of_b *= number
 
+product_b = b.prod()        
+
+product_b
+>>> 20160
+
 # Exercise 6 - refactor the following to use numpy to find the list of squares 
 squares_of_b = []
 for row in b:
     for number in row:
         squares_of_b.append(number**2)
+
+squares_b = np.square(b)
+
+squares_b
+>>>
+array([[ 9, 16, 25],
+       [36, 49, 64]])
 
 
 # Exercise 7 - refactor using numpy to determine the odds_in_b
@@ -224,6 +236,11 @@ for row in b:
         if(number % 2 != 0):
             odds_in_b.append(number)
 
+odds_in_b = b[b % 2 != 0]
+
+odds_in_b
+>>> array([3, 5, 7])
+
 
 # Exercise 8 - refactor the following to use numpy to filter only the even numbers
 evens_in_b = []
@@ -232,22 +249,59 @@ for row in b:
         if(number % 2 == 0):
             evens_in_b.append(number)
 
+evens_in_b = b[b % 2 == 0]
+evens_in_b
+>>> array([4, 6, 8])
+
 # Exercise 9 - print out the shape of the array b.
+print(b)
+>>>
+[[3 4 5]
+ [6 7 8]]
 
 # Exercise 10 - transpose the array b.
 
-# Exercise 11 - reshape the array b to be a single list of 6 numbers. (1 x 6)
+transpose_b = b.transpose()
 
-# Exercise 12 - reshape the array b to be a list of 6 lists, each containing only 1 number (6 x 1)
+transpose_b
+>>>
+array([[3, 6],
+       [4, 7],
+       [5, 8]])
+
+# Exercise 11 - reshape the array b to be a single list of 6 numbers. (1 x 6)
+b_reshape = np.reshape(b, (1, 6))
+
+b_reshape
+>>>
+array([[3, 4, 5, 6, 7, 8]])t
+
+
+# Exercise 12 - reshape the array b to be a list of 6 lists, 
+# each containing only 1 number (6 x 1)
+
+b_reshape_2 = np.reshape(b, (6,1))
+
+b_reshape_2
+>>>array([[3],
+       [4],
+       [5],
+       [6],
+       [7],
+       [8]])
+
+
 
 ## Setup 3
-c = [
+c = np.array([
     [1, 2, 3],
     [4, 5, 6],
     [7, 8, 9]
-]
+])
 
-# HINT, you'll first need to make sure that the "c" variable is a numpy array prior to using numpy array methods.
+# HINT, you'll first need to make sure that the "c" variable is 
+# a numpy array prior to using numpy array methods.
+
 # Exercise 1 - Find the min, max, sum, and product of c.
 
 # Exercise 2 - Determine the standard deviation of c.
