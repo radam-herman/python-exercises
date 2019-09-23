@@ -374,22 +374,103 @@ d = [
     [60, 45, -45, 90, -45, 180]
 ]
 
+dna = np.array([
+    [90, 30, 45, 0, 120, 180],
+    [45, -90, -30, 270, 90, 0],
+    [60, 45, -45, 90, -45, 180]
+])
+
 # Exercise 1 - Find the sine of all the numbers in d
+np.sin(dna)
+>>>
+array([[ 0.89399666, -0.98803162,  0.85090352,  0.        ,  0.58061118,
+        -0.80115264],
+       [ 0.85090352, -0.89399666,  0.98803162, -0.17604595,  0.89399666,
+         0.        ],
+       [-0.30481062,  0.85090352, -0.85090352,  0.89399666, -0.85090352,
+        -0.80115264]])
 
 # Exercise 2 - Find the cosine of all the numbers in d
 
+np.cos(dna)
+>>>
+array([[-0.44807362,  0.15425145,  0.52532199,  1.        ,  0.81418097,
+        -0.59846007],
+       [ 0.52532199, -0.44807362,  0.15425145,  0.98438195, -0.44807362,
+         1.        ],
+       [-0.95241298,  0.52532199,  0.52532199, -0.44807362,  0.52532199,
+        -0.59846007]])
+
 # Exercise 3 - Find the tangent of all the numbers in d
+np.tan(dna)
+>>>array([[-1.99520041, -6.4053312 ,  1.61977519,  0.        ,  0.71312301,
+         1.33869021],
+       [ 1.61977519,  1.99520041,  6.4053312 , -0.17883906, -1.99520041,
+         0.        ],
+       [ 0.32004039,  1.61977519, -1.61977519, -1.99520041, -1.61977519,
+         1.33869021]])
 
 # Exercise 4 - Find all the negative numbers in d
+   ''' running into problems here - 
+    1) negative fx will only return unique apparently, ie 2nd -45 not listed??
+    2) the array re
+neg_dna = np.negative(dna)
+
+>>>array([[ -90,  -30,  -45,    0, -120, -180],
+       [ -45,   90,   30, -270,  -90,    0],
+       [ -60,  -45,   45,  -90,   45, -180]])
+       '''
+
+dna[dna < 0]
 
 # Exercise 5 - Find all the positive numbers in d
 
-# Exercise 6 - Return an array of only the unique numbers in d.
+np.positive(dna)
+>>> array([-90, -30, -45, -45])
 
+# Exercise 6 - Return an array of only the unique numbers in d.
+np.unique(dna)
+>>>
+array([-90, -45, -30,   0,  30,  45,  60,  90, 120, 180, 270])
+len(np.unique(dna))
+>>> 11
+'''
+len(dna) ### careful - this only returns each array!!!!!
+'''
 # Exercise 7 - Determine how many unique numbers there are in d.
+  ## see above 
 
 # Exercise 8 - Print out the shape of d.
+print(dna)                                                            
+[[ 90  30  45   0 120 180]
+ [ 45 -90 -30 270  90   0]
+ [ 60  45 -45  90 -45 180]]
 
 # Exercise 9 - Transpose and then print out the shape of d.
+transpose_d = dna.transpose()
+
+transpose_d
+>>>
+array([[ 90,  45,  60],
+       [ 30, -90,  45],
+       [ 45, -30, -45],
+       [  0, 270,  90],
+       [120,  90, -45],
+       [180,   0, 180]])
 
 # Exercise 10 - Reshape d into an array of 9 x 2
+
+reshape_d = np.reshape(dna, (9,2))
+
+reshape_d
+
+>>>
+array([[ 90,  30],
+       [ 45,   0],
+       [120, 180],
+       [ 45, -90],
+       [-30, 270],
+       [ 90,   0],
+       [ 60,  45],
+       [-45,  90],
+       [-45, 180]])
