@@ -304,19 +304,67 @@ c = np.array([
 
 # Exercise 1 - Find the min, max, sum, and product of c.
 
+c.min()
+>>> 1
+
+c.max()
+>>> 9
+
+c.sum()
+>>> 45
+
+c.prod()
+>>> 362880
+
 # Exercise 2 - Determine the standard deviation of c.
+
+c.std()
+>>> 2.581988897471611
 
 # Exercise 3 - Determine the variance of c.
 
+
 # Exercise 4 - Print out the shape of the array c
+print(c)
+>>>
+[[1 2 3]
+ [4 5 6]
+ [7 8 9]]
 
 # Exercise 5 - Transpose c and print out transposed result.
+c.transpose()
+>>>array([
+       [1, 4, 7],
+       [2, 5, 8],
+       [3, 6, 9]])
 
 # Exercise 6 - Multiply c by the c-Transposed and print the result.
+c_transpose = c.transpose()
 
-# Exercise 7 - Write the code necessary to sum up the result of c times c transposed. Answer should be 261
+multiply = c * c_transpose
 
-# Exercise 8 - Write the code necessary to determine the product of c times c transposed. Answer should be 131681894400.
+multiply
+>>>
+array([[ 1,  8, 21],
+       [ 8, 25, 48],
+       [21, 48, 81]])
+
+# Exercise 7 - Write the code necessary to sum up the result of 
+# c times c transposed. Answer should be 261
+
+sum_of = np.sum(multiply)
+
+sum_of
+>>> 261
+
+
+# Exercise 8 - Write the code necessary to determine 
+# the product of c times c transposed. Answer should be 131681894400.
+
+product_of = np.prod(multiply)
+
+product_of
+>>> 131681894400
 
 
 ## Setup 4
