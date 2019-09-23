@@ -84,42 +84,125 @@ a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 # Use python's built in functionality/operators to determine the following:
 # Exercise 1 - Make a variable called sum_of_a to hold the sum of all the numbers in above list
+sum_of_a = 0
+for numbers in a:
+    sum_of_a += numbers
+
+sum_of_a 
+>>> 55
 
 # Exercise 2 - Make a variable named min_of_a to hold the minimum of all the numbers in the above list
+min_of_a  = a[0] # also tested with min = 1000
+for number in a: 
+    if min_of_a  > number: 
+    min_of_a  = number
+
+min_of_a
+>>> 1
 
 # Exercise 3 - Make a variable named max_of_a to hold the max number of all the numbers in the above list
+max_of_a = a[0] # start with a number from the array, if anything is larger then it's the new max 
+for number in a: 
+    if max_of_a < nbr: 
+        max_of_a = nbr
+
+max_of_a
+>>> 10
 
 # Exercise 4 - Make a variable named mean_of_a to hold the average of all the numbers in the above list
+mean_of_a
 
+sum_of_a
+for numbers in a:
+    sum_of_a += numbers
+mean_of_a = sum_of_a / len(a)
+
+mean_of_a
+>>> 11
 # Exercise 5 - Make a variable named product_of_a to hold the product of multiplying all the numbers in the above list together
+product_of_a = 1
+
+for number in a:
+    product_of_a *= number
+
+product_of_a
+>>> 3628800
 
 # Exercise 6 - Make a variable named squares_of_a. It should hold each number in a squared like [1, 4, 9, 16, 25...]
+squares_of_a = []
+for number in a:
+    squares_of_a.append(number ** 2)
+
+a
+>>> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+squares_of_a
+>>> [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
 
 # Exercise 7 - Make a variable named odds_in_a. It should hold only the odd numbers
 
+odds_in_a = []
+for number in a:
+    if number % 2 != 0:
+        odds_in_a.append(number)
+
+odds_in_a
+
+>>> [1, 3, 5, 7, 9]
+
 # Exercise 8 - Make a variable named evens_in_a. It should hold only the evens.
 
+evens_in_a = []
+for number in a:
+    if number % 2 == 0:
+        evens_in_a.append(number)
+
+evens_in_a
+
+
 ## What about life in two dimensions? A list of lists is matrix, a table, a spreadsheet, a chessboard...
-## Setup 2: Consider what it would take to find the sum, min, max, average, sum, product, and list of squares for this list of two lists.
+## Setup 2: Consider what it would take to find the 
+# sum, min, max, average, sum, product, and list of squares for this list of two lists.
 b = [
     [3, 4, 5],
     [6, 7, 8]
 ]
 
-# Exercise 1 - refactor the following to use numpy. Use sum_of_b as the variable. **Hint, you'll first need to make sure that the "b" variable is a numpy array**
+# Exercise 1 - refactor the following to use numpy. 
+# Use sum_of_b as the variable. **Hint, you'll first need to make sure that the "b" variable is a numpy array**
 sum_of_b = 0
 for row in b:
     sum_of_b += sum(row)
 
+b = np.array([
+    [3, 4, 5],
+    [6, 7, 8]
+])
+
+b.sum()
+>>> 33
+
+
 # Exercise 2 - refactor the following to use numpy. 
-min_of_b = min(b[0]) if min(b[0]) <= min(b[1]) else min(b[1])  
+min_of_b = min(b[0]) if min(b[0]) <= min(b[1]) else min(b[1]) 
+
+min_of_b = b.min()
+>>> 3
 
 # Exercise 3 - refactor the following maximum calculation to find the answer with numpy.
 max_of_b = max(b[0]) if max(b[0]) >= max(b[1]) else max(b[1])
 
+max_of_b = b.max()
+>>> 8
+
 
 # Exercise 4 - refactor the following using numpy to find the mean of b
 mean_of_b = (sum(b[0]) + sum(b[1])) / (len([b[0]]) + len(b[1]))
+
+mean_of_b = b.mean()
+
+mean_of_b
+>>> 5.5
+
 
 # Exercise 5 - refactor the following to use numpy for calculating the product of all numbers multiplied together.
 product_of_b = 1
