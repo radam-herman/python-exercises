@@ -1,5 +1,7 @@
 # 4.7_numpy_exercises.py
 
+import numpy as np
+
 # Use the following code for the questions below:
 
 a = np.array([4, 10, 12, 23, -2, -1, 0, 0, 0, -6, 3, -7])
@@ -13,10 +15,21 @@ a = np.array([4, 10, 12, 23, -2, -1, 0, 0, 0, -6, 3, -7])
   neg = a[a < 0]
   len(neg)
   >>> 4
+  ''' can also use 
+  sum(a < 0)
+  (a < 0).sum
+  '''
+
+''' can try out masks --
+positives = a > a
+evens = a % 2 == 0
+
+and === np.logical_and(a > 0, a % 2 == 0)
+'''
 
 # 2 How many positive numbers are there?
 
-pos = a[a > 0] % 2 == 0]
+pos = a > 0
 len(pos)
 >>> 5
 
