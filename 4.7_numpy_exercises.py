@@ -104,6 +104,8 @@ for numbers in a:
 sum_of_a 
 >>> 55
 
+sum
+
 # Exercise 2 - Make a variable named min_of_a to hold the minimum of all the numbers in the above list
 min_of_a  = a[0] # also tested with min = 1000
 for number in a: 
@@ -132,7 +134,8 @@ mean_of_a = sum_of_a / len(a)
 
 mean_of_a
 >>> 11
-# Exercise 5 - Make a variable named product_of_a to hold the product of multiplying all the numbers in the above list together
+# Exercise 5 - Make a variable named product_of_a to hold the product
+#  of multiplying all the numbers in the above list together
 product_of_a = 1
 
 for number in a:
@@ -141,7 +144,8 @@ for number in a:
 product_of_a
 >>> 3628800
 
-# Exercise 6 - Make a variable named squares_of_a. It should hold each number in a squared like [1, 4, 9, 16, 25...]
+# Exercise 6 - Make a variable named squares_of_a. It should hold each 
+# number in a squared like [1, 4, 9, 16, 25...]
 squares_of_a = []
 for number in a:
     squares_of_a.append(number ** 2)
@@ -172,7 +176,8 @@ for number in a:
 evens_in_a
 >>> [2, 4, 6, 8, 10]
 
-## What about life in two dimensions? A list of lists is matrix, a table, a spreadsheet, a chessboard...
+## What about life in two dimensions? A list of lists is matrix, a table, 
+# a spreadsheet, a chessboard...
 ## Setup 2: Consider what it would take to find the 
 # sum, min, max, average, sum, product, and list of squares for this list of two lists.
 b = [
@@ -433,7 +438,7 @@ neg_dna = np.negative(dna)
        [ -45,   90,   30, -270,  -90,    0],
        [ -60,  -45,   45,  -90,   45, -180]])
        '''
-
+    # over thinking - solution simply...
 dna[dna < 0]
 
 # Exercise 5 - Find all the positive numbers in d
