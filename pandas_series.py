@@ -62,7 +62,6 @@ In [157]: unique_fruits.idxmin()
 Out[157]: 'pineapple'
 
 # g -- Write the code to get the longest string from the fruits series.
-unique_fruits.itemsize()
 fruits.str.len()
 >>>
 Out[161]: 
@@ -139,7 +138,7 @@ Out[152]:
 16              Papaya
 dtype: object
 
-# j -- Count the letter "a" in all the fruits (use string vectorization)
+j -- Count the letter "a" in all the fruits (use string vectorization)
 fruits.str.contains('a')
 >>>
 Out[169]: 
@@ -176,12 +175,23 @@ Out[170]:
 16              papaya
 dtype: object
 
+fruits[fruits.str.contains('a').count()]
+fruits[len (fruit for fruit in fruits if chr for chr in fruit if chr.lower() in 'aeiou')]
 
 k -- Output the number of vowels in each and every fruit.
     # hint ZIP
 
+fruits['fruit_vowel_count'] = fruits[fruit_vowel for fruit_vowel ]
+
+
+
+
+
 l -- Use the .apply method and a lambda function to find the fruit(s) 
 containing two or more "o" letters in the name.
+
+
+fruits[fruits.str.contains('p') > 1]
 
 # m -- Write the code to get only the fruits containing "berry" in the name
 In [172]: fruits[fruits.str.contains('berry')]                                  
@@ -208,11 +218,140 @@ o -- Which fruit has the highest amount of vowels?
 
 
 ['$796,459.41', '$278.60', '$482,571.67', '$4,503,915.98', '$2,121,418.3', '$1,260,813.3', '$87,231.01', '$1,509,175.45', '$4,138,548.00', '$2,848,913.80', '$594,715.39', '$4,789,988.17', '$4,513,644.5', '$3,191,059.97', '$1,758,712.24', '$4,338,283.54', '$4,738,303.38', '$2,791,759.67', '$769,681.94', '$452,650.23']
-What is the data type of the series?
-Use series operations to convert the series to a numeric data type.
-What is the maximum value? The minimum?
-Bin the data into 4 equally sized intervals and show how many values fall into each bin.
+#
+import pandas as pd
+money = pd.Series(['$796,459.41', '$278.60', '$482,571.67', '$4,503,915.98', '$2,121,418.3', '$1,260,813.3', '$87,231.01', '$1,509,175.45', '$4,138,548.00', '$2,848,913.80', '$594,715.39', '$4,789,988.17', '$4,513,644.5', '$3,191,059.97', '$1,758,712.24', '$4,338,283.54', '$4,738,303.38', '$2,791,759.67', '$769,681.94', '$452,650.23'])
+#
+
+# What is the data type of the series?
+>>>
+In [191]: type(money)                                                           
+Out[191]: pandas.core.series.Series
+
+
+# Use series operations to convert the series to a numeric data type.
+
+new_money = money.str.replace('$','')
+new_money2 = new_money.str.replace(',','') # NOTE - stacking did not work so ran separately
+
+>>>
+Out[197]: 
+0      796459.41
+1         278.60
+2      482571.67
+3     4503915.98
+4      2121418.3
+5      1260813.3
+6       87231.01
+7     1509175.45
+8     4138548.00
+9     2848913.80
+10     594715.39
+11    4789988.17
+12     4513644.5
+13    3191059.97
+14    1758712.24
+15    4338283.54
+16    4738303.38
+17    2791759.67
+18     769681.94
+19     452650.23
+dtype: object
+'''
+new_money2 = new_money2.astype('float')
+In [213]: new_money2.dtype                                                      
+Out[213]: dtype('float64')
+'''
+>>>
+In [225]: new_money2.sort_values(ascending=False)                               
+Out[225]: 
+11    4789988.17
+16    4738303.38
+12    4513644.50
+3     4503915.98
+15    4338283.54
+8     4138548.00
+13    3191059.97
+9     2848913.80
+17    2791759.67
+4     2121418.30
+14    1758712.24
+7     1509175.45
+5     1260813.30
+0      796459.41
+18     769681.94
+10     594715.39
+2      482571.67
+19     452650.23
+6       87231.01
+1         278.60
+dtype: float64
+
+
+# What is the maximum value? 
+>>>'''
+In [215]: new_money2.max()                                                      
+Out[215]: 4789988.17
+'''
+
+# The minimum?
+
+>>>'''
+In [214]: new_money2.min()                                                      
+Out[214]: 278.6
+'''
+
+# Bin the data into 4 equally sized intervals and show how many values fall into each bin.
+>>>
+In [227]: bin_money = new_money2.sort_values(ascending=False)                   
+
+In [228]: bin_money.dtype                                                       
+Out[228]: dtype('float64')
+
+'''
+In [229]: pd.cut(bin_money, 4)                                                  
+Out[229]: 
+11     (3592560.778, 4789988.17]
+16     (3592560.778, 4789988.17]
+12     (3592560.778, 4789988.17]
+3      (3592560.778, 4789988.17]
+15     (3592560.778, 4789988.17]
+8      (3592560.778, 4789988.17]
+13    (2395133.385, 3592560.778]
+9     (2395133.385, 3592560.778]
+17    (2395133.385, 3592560.778]
+4     (1197705.993, 2395133.385]
+14    (1197705.993, 2395133.385]
+7     (1197705.993, 2395133.385]
+5     (1197705.993, 2395133.385]
+0        (-4511.11, 1197705.993]
+18       (-4511.11, 1197705.993]
+10       (-4511.11, 1197705.993]
+2        (-4511.11, 1197705.993]
+19       (-4511.11, 1197705.993]
+6        (-4511.11, 1197705.993]
+1        (-4511.11, 1197705.993]
+dtype: category
+Categories (4, interval[float64]): [(-4511.11, 1197705.993] < (1197705.993, 2395133.385] <
+                                    (2395133.385, 3592560.778] < (3592560.778, 4789988.17]]
+'''
+import matplotlib.pyplot as plt
+import pandas as pd
+money = pd.Series(['$796,459.41', '$278.60', '$482,571.67', '$4,503,915.98', '$2,121,418.3', '$1,260,813.3', '$87,231.01', '$1,509,175.45', '$4,138,548.00', '$2,848,913.80', '$594,715.39', '$4,789,988.17', '$4,513,644.5', '$3,191,059.97', '$1,758,712.24', '$4,338,283.54', '$4,738,303.38', '$2,791,759.67', '$769,681.94', '$452,650.23'])
+#
+new_money = money.str.replace('$','')
+new_money2 = new_money.str.replace(',','')
+new_money2 = new_money2.astype('float')
+
+bin_money = new_money2.sort_values(ascending=False) 
+
+bin_money.plot.hist()
+    # place any title reorg stuff here between plot and show
+
+    
+plt.show()
 Plot a histogram of the data. Be sure to include a title and axis labels.
+
 
 
 # 3 - Use pandas to create a Series from the following exam scores:
@@ -247,8 +386,9 @@ Create a bar plot of the frequencies of the 6 most frequently occuring letters.
 from pydataset import data
 
 # When the instructions say to load a dataset, you can pass the name of the dataset
-#  as a string to the data function to load the dataset. You can also view 
-# the documentation for the data set by passing the show_doc keyword argument.
+#  as a string to the data function to load the dataset. 
+# You can also view the documentation for the data set by passing 
+#      the show_doc keyword argument.
 
 # data('mpg', show_doc=True) # view the documentation for the dataset
 mpg = data('mpg') # load the dataset and store it in a variable
