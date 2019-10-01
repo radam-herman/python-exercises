@@ -335,22 +335,42 @@ dtype: category
 Categories (4, interval[float64]): [(-4511.11, 1197705.993] < (1197705.993, 2395133.385] <
                                     (2395133.385, 3592560.778] < (3592560.778, 4789988.17]]
 '''
+
+
+#### Plot a histogram of the data. Be sure to include a title and axis labels.
+    ## note, this thread has been recreated below in entirety to ensure
+    ## the code will run 
 import matplotlib.pyplot as plt
 import pandas as pd
 money = pd.Series(['$796,459.41', '$278.60', '$482,571.67', '$4,503,915.98', '$2,121,418.3', '$1,260,813.3', '$87,231.01', '$1,509,175.45', '$4,138,548.00', '$2,848,913.80', '$594,715.39', '$4,789,988.17', '$4,513,644.5', '$3,191,059.97', '$1,758,712.24', '$4,338,283.54', '$4,738,303.38', '$2,791,759.67', '$769,681.94', '$452,650.23'])
 #
-new_money = money.str.replace('$','')
-new_money2 = new_money.str.replace(',','')
-new_money2 = new_money2.astype('float')
+new_money = money.str.replace('$','').str.replace(',','').astype('float')
+# new_money2 = new_money.str.replace(',','')
+# vnew_money2 = new_money2.astype('float')
 
-bin_money = new_money2.sort_values(ascending=False) 
+# min and max
+
+new_money.max()
+#
+new_money.min()
+
+
+pd.cut(new_money, 4,).value_counts()
+
+pd.cut(new_money, 4,).value_counts().hist()
+
+
+
+bin_money = new_money.sort_values(ascending=False) 
+bin_money_count = bin_money.count_values
 
 bin_money.plot.hist()
     # place any title reorg stuff here between plot and show
-
-    
+plt.title('Money Distribution')
+#pd.Series(bin_money).value_counts().plot.bar()
+# plot.bar(color='firebrick', width=.9)
 plt.show()
-Plot a histogram of the data. Be sure to include a title and axis labels.
+
 
 
 
@@ -361,6 +381,17 @@ What is the minimum exam score? The max, mean, median?
 Plot a histogram of the scores.
 Convert each of the numbers above into a letter grade. For example, 86 should be a 'B' and 95 should be an 'A'.
 Write the code necessary to implement a curve. I.e. that grade closest to 100 should be converted to a 100, and that many points should be given to every other score as well.
+
+
+import matplotlib.pyplot as plt
+import pandas as pd
+
+grades = pd.Series([60, 86, 75, 62, 93, 71, 60, 83, 95, 78, 65, 72, 69, 81, 96, 80, 85, 92, 82, 78])
+grades.dtype
+    # >>> # Out[242]: dtype('int64')
+
+
+
 
 
 # 4 - Use pandas to create a Series from the following string:
