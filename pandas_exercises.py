@@ -32,7 +32,7 @@ Out[25]:
 70         dodge   12
 60         dodge   12
 
->>> '''
+>>> 
 In [26]: mpg[manu_best_milage].sort_values(by='hwy', ascending=False).head()         
 Out[26]: 
     manufacturer  hwy
@@ -41,7 +41,7 @@ Out[26]:
 223   volkswagen   41
 197       toyota   37
 106        honda   36
-'''
+
 
 # How many different manufacturers are there?
 >>>
